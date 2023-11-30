@@ -35,7 +35,9 @@ import { PitchDetector } from 'pitchy';
         widthPercent = Math.max(0, Math.min(100, widthPercent));
       }
 
-      return { width: `${widthPercent}%` };
+      console.log(Math.ceil(widthPercent))
+
+      return { width: `${Math.ceil(widthPercent)}%` };
     });
 
     const getClosestNote = (frequency) => {
@@ -127,7 +129,7 @@ import { PitchDetector } from 'pitchy';
 
 <template>
   <div>
-    <button @click="startTuning" :disabled="isTuning">Start Tuning</button>
+    <button @click="startTuning" :disabled="isTuning" class="mr-2">Start Tuning</button>
     <button @click="stopTuning" :disabled="!isTuning">Stop Tuning</button>
     <div >Pitch: <span style="min-width: 200px;">{{ currentPitch }}</span> Hz</div>
     <div>{{ currentString }} string</div>

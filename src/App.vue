@@ -26,6 +26,7 @@ import { PitchDetector } from 'pitchy';
       const closestNoteFrequency = getClosestNote(currentFrequency);
       const frequencyDiff = currentFrequency - closestNoteFrequency;
       const maxDiff = 10;
+      let bgColor = 'green'
 
       let widthPercent = 50;
 
@@ -35,9 +36,15 @@ import { PitchDetector } from 'pitchy';
         widthPercent = Math.max(0, Math.min(100, widthPercent));
       }
 
-      console.log(Math.ceil(widthPercent))
+      if (widthPercent <= 45 || widthPercent >= 55) {
+        bgColor = 'red'
+      } else if (widthPercent > 45 || widthPercent < 55) {
+        bgColor = 'green'
+      } else {
+        bgColor = 'orange'
+      }
 
-      return { width: `${Math.ceil(widthPercent)}%` };
+      return `width: ${Math.ceil(widthPercent)}%; background-color: ${bgColor}` ;
     });
 
     const getClosestNote = (frequency) => {
@@ -131,11 +138,11 @@ import { PitchDetector } from 'pitchy';
   <div>
     <button @click="startTuning" :disabled="isTuning" class="mr-2">Start Tuning</button>
     <button @click="stopTuning" :disabled="!isTuning">Stop Tuning</button>
-    <div >Pitch: <span style="min-width: 200px;">{{ currentPitch }}</span> Hz</div>
+    <div >Pitch: <span>{{ currentPitch }}</span> Hz</div>
     <div>{{ currentString }} string</div>
 
     <div style="background-color: grey; width: 100%; height: 20px; margin-top: 10px;">
-      <div :style="tuningIndicatorStyle" style="height: 100%; background-color: blue;"></div>
+      <div :style="tuningIndicatorStyle" class="transition-all	" style="height: 100%;"></div>
     </div>
   </div>
 </template>

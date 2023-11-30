@@ -1,5 +1,3 @@
-
-
 <script setup>
 import { ref, onUnmounted, computed } from 'vue';
 import { PitchDetector } from 'pitchy';
@@ -85,8 +83,7 @@ import { PitchDetector } from 'pitchy';
           analyser.getFloatTimeDomainData(dataArray);
           const detector = PitchDetector.forFloat32Array(analyser.fftSize, audioContext.sampleRate);
           const [pitch, clarity] = detector.findPitch(dataArray, audioContext.sampleRate);
-
-          if (clarity > 0.9 && pitch) {
+          if (clarity > 0.97 && pitch) {
             currentString.value = getClosestStringName(pitch);
             const closestNote = getClosestNote(pitch);
             const tuningFeedback = getTuningFeedback(pitch, closestNote);
@@ -132,7 +129,7 @@ import { PitchDetector } from 'pitchy';
   <div>
     <button @click="startTuning" :disabled="isTuning">Start Tuning</button>
     <button @click="stopTuning" :disabled="!isTuning">Stop Tuning</button>
-    <div class="min-w-64">Pitch: {{ currentPitch }} Hz</div>
+    <div >Pitch: <span style="min-width: 200px;">{{ currentPitch }}</span> Hz</div>
     <div>{{ currentString }} string</div>
 
     <div style="background-color: grey; width: 100%; height: 20px; margin-top: 10px;">

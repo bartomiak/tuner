@@ -1,18 +1,45 @@
-# Vue 3 + TypeScript + Vite
+# Guitar Tuner App
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+## Overview
+The Guitar Tuner App is a web-based application designed to help musicians tune their guitars quickly and accurately. Utilizing advanced audio processing techniques, it listens to the sound of a guitar string and provides visual feedback on the tuning accuracy. 
 
-## Recommended IDE Setup
+## Features
+- Detects pitch in real-time using the device's microphone.
+- Provides visual feedback to indicate whether the string is in tune, too high, or too low.
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+## Built With
+- [Vue 3](https://v3.vuejs.org/) - The Progressive JavaScript Framework for building user interfaces.
+- [Tailwind CSS](https://tailwindcss.com/) - A utility-first CSS framework for rapid UI development.
 
-## Type Support For `.vue` Imports in TS
+## Getting Started
+To get a local copy up and running, follow these simple steps.
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+1. Clone the repository:
+```bash
+git clone git@github.com:bartomiak/tuner.git
+```
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+2. Navigate to the app's directory:
 
-1. Disable the built-in TypeScript Extension
-   1. Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-   2. Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+```bash
+cd tuner
+```
+
+3. Install NPM packages:
+```bash
+npm install
+```
+
+4. Run the app in development mode:
+```bash
+npm run dev
+```
+
+## Usage
+Open the app in your web browser, and grant permission to access the microphone. Pluck a guitar string, and the app will indicate the tuning status.
+
+## Contributing
+Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are greatly appreciated.
+
+## License
+Distributed under the MIT License. See LICENSE for more information.

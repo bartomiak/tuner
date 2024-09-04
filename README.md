@@ -1,6 +1,8 @@
 # Guitar Tuner App
 
 ## Overview
+<img src="https://github.com/user-attachments/assets/5a3e9eab-d020-49bf-82ac-c85d0f91ca28" width="600" />
+
 The Guitar Tuner App is a web-based application designed to help musicians tune their guitars quickly and accurately. Utilizing advanced audio processing techniques, it listens to the sound of a guitar string and provides visual feedback on the tuning accuracy. 
 
 ## Features
